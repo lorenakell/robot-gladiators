@@ -1,5 +1,4 @@
 var playerName = window.prompt("What is your robot's name?");
-window.alert(playerName);
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
@@ -8,22 +7,18 @@ var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(playerName);
+var fight = function(enemyName) {
+  // repeat and execute as long as the enemy-robot is alive 
+      while(enemyHealth > 0) {
+  // place fight function code block here . . .
 
-console.log(enemyNames);
-
-for (var i = 0; i < enemyNames.length; i++) {
-    debugger;
-// call fight function with enemy-robot
-fight(enemyNames[i]);
+for(var i = 0; i < enemyNames.length; i++) {
+  console.log(enemyNames[i]);
+  console.log(i);
+  console.log(enemyNames[i] + " is at " + i + " index");
 }
 
-  var fight = function(enemyName) {
-// repeat and execute as long as the enemy-robot is alive 
-    while(enemyHealth > 0) {
-// place fight function code block here . . .
-    var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
-    }
+  var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");    
 
 // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -99,11 +94,10 @@ if (playerHealth <= 0) {
 else {
   window.alert(playerName + " still has " + playerHealth + " health left.");
 };
-
-for (var i = 0; i < enemyNames.length; i++) {
-     fight(enemyNames[i]);
-            }
-        }
+        };
+      };
 
 // execute fight
- fight();
+for(var i = 0; i < enemyNames.length; i++) {
+  fight(enemyNames[i]);
+}
